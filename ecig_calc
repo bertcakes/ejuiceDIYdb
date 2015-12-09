@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+import recipes
+import nic_calc
+
+recipes.list()
+
+try:
+    choice = raw_input("what do you want? ")
+    ch = int(choice)
+    size = raw_input("what size do you want? ")
+    s = float(size)
+    goal = raw_input("Enter goal nic level: ")
+    g = float(goal)
+    base = raw_input("Enter nicotine base: ")
+    b = float(base)
+
+except:
+    print "Hmmm, that doesn't seem to be one of the options."
+    quit()
+
+if ch == 1: #peachango
+    recipes.peacha(s) #calling peacha() from recipes
+
+elif ch == 2: #tigersblood
+    recipes.tigersblood(s) #calling tigersblood() from recipes
+
+#pretty sure not needed
+# else:
+#     print "Hmmm, that doesn't seem to be one of the options."
+
+print nic_calc.computenic(g,b,s), "- nicotine"
