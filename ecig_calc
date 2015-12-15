@@ -3,21 +3,23 @@
 import recipes
 import nic_calc
 
-recipes.list()
+while True:
+    recipes.list()
 
-try:
-    choice = raw_input("what do you want? ")
-    ch = int(choice)
-    size = raw_input("what size do you want? ")
-    s = float(size)
-    goal = raw_input("Enter goal nic level: ")
-    g = float(goal)
-    base = raw_input("Enter nicotine base: ")
-    b = float(base)
+    try:
+        choice = raw_input("what do you want? ")
+        ch = int(choice)
+        size = raw_input("what size do you want? ")
+        s = float(size)
+        goal = raw_input("Enter goal nic level: ")
+        g = float(goal)
+        base = raw_input("Enter nicotine base: ")
+        b = float(base)
+        break
 
-except:
-    print "Hmmm, that doesn't seem to be one of the options."
-    quit()
+    except:
+        print "Hmmm, that doesn't seem to be one of the options."
+        continue
 
 if ch == 1: #peachango
     recipes.peacha(s) #calling peacha() from recipes
